@@ -12,6 +12,17 @@ Auth::routes();
 
 Route::group(['prefix' => 'dashboard'], function(){
 	Route::get('/', 'DashboardController@index')->name('dashboard.index');
+
+});
+Route::group(['prefix' => 'profile'], function(){
+	Route::get('/', 'ProfileController@index')->name('profile.index');
+	Route::post('/update/{id}','ProfileController@update')->name('profile.update');
+	
+});
+Route::group(['prefix' => 'settings'], function(){
+	Route::get('/', 'SettingController@index')->name('settings.index');
+
+	
 });
 
 

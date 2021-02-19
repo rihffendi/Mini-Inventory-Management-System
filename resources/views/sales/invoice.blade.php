@@ -33,11 +33,12 @@ Invoice:
 <div class="col-sm-6">
 <h6 class="mb-3">From:</h6>
 <div>
-<strong>Rafiat Ibna Hussine</strong>
+<strong>{{auth()->user()->full_name}}</strong>
 </div>
-<div>173 South Goran,Dhaka</div>
-<div>Email: mdrafiatibnahussine@gmail.com</div>
-<div>Phone: 01677317694</div>
+<div>{{auth()->user()->company_name}}</div>
+<div>{{auth()->user()->address}}</div>
+<div>{{auth()->user()->email}}</div>
+<div>{{auth()->user()->contact}}</div>
 </div>
 
 <div class="col-sm-6">
