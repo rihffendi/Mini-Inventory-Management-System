@@ -85,6 +85,7 @@
 <script>
     $(document).ready(function() {
     $('#example').DataTable();
+     $('[data-toggle="tooltip"]').tooltip()
 } );
 </script>
 

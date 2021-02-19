@@ -22,33 +22,35 @@
 
 <div class="container">
   <div class="card">
-<div class="card-header pt-5">
-Invoice:
-<strong>{{$purchase->invoice_no}}</strong> <br>Issue Date: {{$purchase->date}}
-  <span class="float-right"> <strong>Status:</strong> {{$purchase->status}}</span>
-
+<div class="card-header pt-5 font-weight-normal">
+    <div class="row">
+        <div class="float-left col-6">
+        <strong>Invoice :</strong>  {{$purchase->invoice_no}} <br><strong>Order Date :</strong> {{$purchase->date}}<br><strong>Status :</strong> {{$purchase->status}} 
+        </div>
+        <div class=" col-6">
+          <img src="{{asset(auth()->user()->company_logo)}}" alt="" width="100px">
+        </div>
+    </div>
 </div>
 <div class="card-body">
 <div class="row mb-5">
 <div class="col-sm-6">
-<h6 class="mb-3">From:</h6>
-<div>
-<strong>{{$supplier->name}}</strong>
-</div>
-<div>{{$supplier->address}}</div>
-<div>Email: {{$supplier->email}}</div>
-<div>Phone: {{$supplier->phone}}</div>
+<h6 class="mb-3"><strong>From:</strong></h6>
+<div class="font-weight-normal"><strong>Name : </strong> {{$supplier->name}}</div>
+<div class="font-weight-normal"><strong>Company : </strong> {{$supplier->company}}</div>
+<div class="font-weight-normal"><strong>Address :</strong> {{$supplier->address}}</div>
+<div class="font-weight-normal"><strong>Email :</strong> {{$supplier->email}}</div>
+<div class="font-weight-normal"><strong>Phone :</strong> {{$supplier->phone}}</div>
 </div>
 
 
 <div class="col-sm-6">
-<h6 class="mb-3">To:</h6>
-<div>
-<strong>Rafiat Ibna Hussine</strong>
-</div>
-<div>173 South Goran,Dhaka</div>
-<div>Email: mdrafiatibnahussine@gmail.com</div>
-<div>Phone: 01677317694</div>
+<h6 class="mb-3"><strong>To:</strong></h6>
+<div class="font-weight-normal"><strong>Name : </strong> {{auth()->user()->full_name}}</div>
+<div class="font-weight-normal"><strong>Company : </strong> {{auth()->user()->company_name}}</div>
+<div class="font-weight-normal"><strong>Address : </strong> {{auth()->user()->address}}</div>
+<div class="font-weight-normal"><strong>Email : </strong> {{auth()->user()->email}}</div>
+<div class="font-weight-normal"><strong>Phone : </strong> {{auth()->user()->contact}}</div>
 </div>
 
 
