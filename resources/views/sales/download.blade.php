@@ -63,7 +63,9 @@ body {
 .mt-5, .my-5 {
     margin-top: 3rem!important;
 }
-
+.font-weight-normal {
+    font-weight: 400!important;
+}
 .row {
     display: -ms-flexbox;
     display: flex;
@@ -75,7 +77,7 @@ body {
 
 .col-sm-6 {
    
-    width: 460px;
+    width: 50%;
 }
 
 .table {
@@ -130,40 +132,35 @@ body {
 <body>
 	
 <div class="container">
-  <div class="card">
-<div class="card-header pt-5">
-Invoice:
-<strong>{{$sale->invoice_no}}</strong> <br> Issue Date: {{$sale->date}}
-  <span class="float-right"> <strong>Status:</strong> {{$sale->status}}</span>
+    <div class="card">
+    <div class="card-header pt-3">
+        <div class="col-sm-6">
+         Invoice: <strong>{{$sale->invoice_no}}</strong> <br> Order Date: {{$sale->date}} <br>  <strong>Status:</strong> {{$sale->status}}
+        </div>
+        <div class="col-sm-6">
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="mb-3" style="min-height: 200px; clear: both;">
+            <div class="col-sm-6 float-left">
+                <h6 class="mb-3"><strong>From:</strong></h6>
+                <div class="font-weight-normal"><strong>Name : </strong> {{auth()->user()->full_name}}</div>
+                <div class="font-weight-normal"><strong>Company : </strong> {{auth()->user()->company_name}}</div>
+                <div class="font-weight-normal"><strong>Address : </strong> {{auth()->user()->address}}</div>
+                <div class="font-weight-normal"><strong>Email : </strong> {{auth()->user()->email}}</div>
+                <div class="font-weight-normal"><strong>Phone : </strong> {{auth()->user()->contact}}</div>
+                </div>
+          
+            <div class="col-sm-6  float-right">
+               <h6 class="mb-3"><strong>To:</strong></h6>
+                <div class="font-weight-normal"><strong>Name : </strong> {{$customer->name}}</div>
+                <div class="font-weight-normal"><strong>Address :</strong> {{$customer->address}}</div>
+                <div class="font-weight-normal"><strong>Email : </strong> {{$customer->email}}</div>
+                <div class="font-weight-normal"><strong>Phone : </strong> {{$customer->phone}}</div>
+            </div>
+        </div>
 
-</div>
-<div class="card-body">
-{{-- <div class="row mb-5"> --}}
-<div class="col-sm-6">
-<h6 class="mb-3">From:</h6>
-<div>
-<strong>Rafiat Ibna Hussine</strong>
-</div>
-<div>173 South Goran,Dhaka</div>
-<div>Email: mdrafiatibnahussine@gmail.com</div>
-<div>Phone: 01677317694</div>
-</div>
-
-<div class="col-sm-6 mb-3">
-<h6 class="mb-3">To:</h6>
-<div>
-<strong>{{$customer->name}}</strong>
-</div>
-<div>{{$customer->address}}</div>
-<div>Email: {{$customer->email}}</div>
-<div>Phone: {{$customer->phone}}</div>
-</div>
-
-
-
-{{-- </div> --}}
-
-<div class="table-responsive-sm pt-5 mb-5">
+<div class="pt-5 mb-5" style="clear: both;">
     <table class="table table-bordered">
         <thead>
             <tr>
