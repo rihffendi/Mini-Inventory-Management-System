@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Customer;
+use App\Income_total;
 
 class CustomerController extends Controller
 {
@@ -15,7 +16,7 @@ class CustomerController extends Controller
     public function index()
     {
         $customer = Customer::orderBy('id','desc')->get();
-        return view('people.customers.index')->with('customer', $customer);
+        return view('people.customers.index')->with('customer',$customer);
     }
 
     /**
@@ -58,8 +59,11 @@ class CustomerController extends Controller
     public function show($id)
     {
         $customer = Customer::find($id);
-
-        return view('people.customers.show')->with('customer', $customer);
+        $outstanding = Income_total::where('customer_id', $customer->id)->first();
+        return view('people.customers.show')->with([
+            'customer' => $customer,
+            'outstanding' => $outstanding
+        ]);
     }
 
     /**

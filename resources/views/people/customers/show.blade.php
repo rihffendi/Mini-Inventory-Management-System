@@ -32,7 +32,12 @@
 				@endif
 				</td>
 			</tr>
-			<tr><td><strong>Customer Details :</strong>	{{$customer->details}}</td></tr>	
+			<tr><td><strong>Customer Details :</strong>	{{$customer->details}}</td></tr>
+			@if($outstanding)
+			<tr><td><strong>Customer Outstanding :</strong>	{{$outstanding->outstanding}}</td></tr>	
+			@else
+			<tr><td><strong>Customer Outstanding :</strong>	0</td></tr>	
+			@endif
 		</tbody>
 	</table>
 

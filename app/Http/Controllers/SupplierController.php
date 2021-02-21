@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Supplier;
+use App\Expense_total;
 
 class SupplierController extends Controller
 {
@@ -60,8 +61,11 @@ class SupplierController extends Controller
     public function show($id)
     {
         $supplier = Supplier::find($id);
-
-        return view('people.suppliers.show')->with('supplier', $supplier);
+        $outstanding = Expense_total::where('supplier_id',$supplier->id)->first();
+        return view('people.suppliers.show')->with([
+            'supplier' => $supplier,
+            'outstanding' => $outstanding
+        ]);
     }
 
     /**

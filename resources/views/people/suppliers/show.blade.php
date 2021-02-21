@@ -34,6 +34,11 @@
 				</td>
 			</tr>
 			<tr><td><strong>Supplier Details :</strong>	{{$supplier->details}}</td></tr>	
+			@if($outstanding)
+			<tr><td><strong>Supplier Outstanding :</strong>	{{$outstanding->outstanding}}</td></tr>	
+			@else
+			<tr><td><strong>Supplier Outstanding :</strong>	0</td></tr>	
+			@endif
 		</tbody>
 	</table>
 
