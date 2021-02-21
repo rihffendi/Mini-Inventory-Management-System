@@ -69,15 +69,34 @@
 		                </div>
 		                <input type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1" name="email" value="{{auth()->user()->email}}"> </div>
 		            </div>
-		            <div class="form-group">
-		              <div class="input-group mb-3">
-		                <div class="input-group-prepend">
-		                  <span class="input-group-text" id="basic-addon1"><strong>Company Name</strong>  <i class="fa fa-asterisk custom-star text-danger" data-placement ="top" aria-hidden="true"></i></span>
-		                </div>
-		                <input type="text" class="form-control" placeholder="Company Name" aria-label="Company Name" aria-describedby="basic-addon1" name="company_name" value="{{auth()->user()->company_name}}"> </div>
-		            </div>
+                    <div class="form-group">
+                        <div class="input-group col-xs-12">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text" id="basic-addon1"><strong>Company Logo</strong>  <i class="fa fa-asterisk custom-star text-danger" data-placement ="top" aria-hidden="true"></i></span>
+                            </div>
+                        </div>
+                       
+                        @if((auth()->user()->company_logo))
+                            <input type="file" class="form-control file-upload-default d-none" name="company_logo" id="company_files" value="{{auth()->user()->company_logo}}">
+                            <span class="pip">
+                                <img src="{{auth()->user()->company_logo}}" class="imageThumb float-left " alt="">
+                                <a href="#" class="float-right" id="logoChangeCompany">Change Company Logo</a>
+                            </span>
+                            
+                        @else
+                            <input type="file" class="form-control file-upload-default" name="company_logo" id="company_files" value="">
+                        @endif
+                    </div>
+		          
 		        </div>
 		        <div class="col-sm-12 col-md-6">
+                    <div class="form-group">
+                      <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="basic-addon1"><strong>Company Name</strong>  <i class="fa fa-asterisk custom-star text-danger" data-placement ="top" aria-hidden="true"></i></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Company Name" aria-label="Company Name" aria-describedby="basic-addon1" name="company_name" value="{{auth()->user()->company_name}}"> </div>
+                    </div>
 		        	 <div class="form-group">
 		              <div class="input-group mb-3">
 		                <div class="input-group-prepend">
@@ -92,24 +111,7 @@
 		                </div>
 		                <input type="text" class="form-control" placeholder="Company Contact" aria-label="Company Contact" aria-describedby="basic-addon1" name="company_contact" value="{{auth()->user()->contact}}"> </div>
 		            </div>
-	          	  	<div class="form-group">
-                        <div class="input-group col-xs-12">
-                        	<div class="input-group-prepend">
-			                  <span class="input-group-text" id="basic-addon1"><strong>Company Logo</strong>  <i class="fa fa-asterisk custom-star text-danger" data-placement ="top" aria-hidden="true"></i></span>
-			                </div>
-                        </div>
-                       
-                   	 	@if((auth()->user()->company_logo))
-                   	 		<input type="file" class="form-control file-upload-default d-none" name="company_logo" id="company_files" value="{{auth()->user()->company_logo}}">
-	                  	 	<span class="pip">
-	                        	<img src="{{auth()->user()->company_logo}}" class="imageThumb float-left " alt="">
-	                        	<a href="#" class="float-right" id="logoChangeCompany">Change Company Logo</a>
-	                        </span>
-	                        
-	                    @else
-	                    	<input type="file" class="form-control file-upload-default" name="company_logo" id="company_files" value="">
-	                    @endif
-                    </div>
+	          	  
 		           	<div class="form-group">
                         <div class="input-group col-xs-12">
                         	<div class="input-group-prepend">

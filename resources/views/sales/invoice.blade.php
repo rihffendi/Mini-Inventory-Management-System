@@ -22,33 +22,33 @@
 
 <div class="container">
   <div class="card">
-<div class="card-header pt-5">
-Invoice:
-<strong>{{$sale->invoice_no}}</strong> <br>Issue Date: {{$sale->date}}
-  <span class="float-right"> <strong>Status:</strong> {{$sale->status}}</span>
-
-</div>
+    <div class="card-header pt-5 font-weight-normal">
+        <div class="row">
+            <div class="float-left col-6">
+            <strong>Invoice :</strong>  {{$sale->invoice_no}} <br><strong>Order Date :</strong> {{$sale->date}}<br><strong>Status :</strong> {{$sale->status}} 
+            </div>
+            <div class=" col-6">
+              <img src="{{asset(auth()->user()->company_logo)}}" alt="" width="100px">
+            </div>
+        </div>
+    </div>
 <div class="card-body">
 <div class="row mb-5">
 <div class="col-sm-6">
-<h6 class="mb-3">From:</h6>
-<div>
-<strong>{{auth()->user()->full_name}}</strong>
-</div>
-<div>{{auth()->user()->company_name}}</div>
-<div>{{auth()->user()->address}}</div>
-<div>{{auth()->user()->email}}</div>
-<div>{{auth()->user()->contact}}</div>
+<h6 class="mb-3"><strong>From:</strong></h6>
+<div class="font-weight-normal"><strong>Name : </strong> {{auth()->user()->full_name}}</div>
+<div class="font-weight-normal"><strong>Company : </strong> {{auth()->user()->company_name}}</div>
+<div class="font-weight-normal"><strong>Address : </strong> {{auth()->user()->address}}</div>
+<div class="font-weight-normal"><strong>Email : </strong> {{auth()->user()->email}}</div>
+<div class="font-weight-normal"><strong>Phone : </strong> {{auth()->user()->contact}}</div>
 </div>
 
 <div class="col-sm-6">
-<h6 class="mb-3">To:</h6>
-<div>
-<strong>{{$customer->name}}</strong>
-</div>
-<div>{{$customer->address}}</div>
-<div>Email: {{$customer->email}}</div>
-<div>Phone: {{$customer->phone}}</div>
+<h6 class="mb-3"><strong>To:</strong></h6>
+<div class="font-weight-normal"><strong>Name : </strong> {{$customer->name}}</div>
+<div class="font-weight-normal"><strong>Address :</strong> {{$customer->address}}</div>
+<div class="font-weight-normal"><strong>Email : </strong> {{$customer->email}}</div>
+<div class="font-weight-normal"><strong>Phone : </strong> {{$customer->phone}}</div>
 </div>
 
 
