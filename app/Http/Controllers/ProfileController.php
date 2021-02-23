@@ -73,7 +73,7 @@ class ProfileController extends Controller
         $user = User::find($id);
         if(!empty($request->file('company_logo'))){
             $image = $request->file('company_logo');
-            $imagename =$image->getClientOriginalName();
+            $imagename =time().'.'.$image->getClientOriginalExtension();
             $path = public_path('/images/company_logo/');
             $check =$path.$imagename;
 
@@ -91,7 +91,7 @@ class ProfileController extends Controller
 
          if(!empty($request->file('profile_photo'))){
             $image = $request->file('profile_photo');
-            $imagename =$image->getClientOriginalName();
+            $imagename =time().'.'.$image->getClientOriginalExtension();
             $path = public_path('/images/profile_photo/');
             $check =$path.$imagename;
 

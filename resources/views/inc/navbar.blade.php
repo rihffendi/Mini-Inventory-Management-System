@@ -52,8 +52,8 @@
                   <div class="dropdown-menu dropdown-menu-small">
                     <a class="dropdown-item" href="{{route('profile.index')}}">
                       <i class="material-icons">&#xE7FD;</i> Profile</a>
-                    <a class="dropdown-item" href="{{route('settings.index')}}">
-                      <i class="material-icons">&#xE7FD;</i> Settings</a>
+                   {{--  <a class="dropdown-item" href="{{route('settings.index')}}">
+                      <i class="material-icons">&#xE7FD;</i> Settings</a> --}}
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item text-danger" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
